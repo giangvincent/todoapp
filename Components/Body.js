@@ -19,9 +19,16 @@ export default function () {
     });
   }
 
+  const submitHandler = (text) => {
+    setTodo((prevTodos) => [
+      { text: text, key: Math.random().toString() },
+      ...prevTodos
+    ]);
+  }
+
   return (
     <View style={styles.content}>
-      <AddTodo />
+      <AddTodo submitHandler={submitHandler} />
       <View style={styles.list}>
         <FlatList
           data={todos}
