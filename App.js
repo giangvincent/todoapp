@@ -4,6 +4,7 @@ import { Text, View, SafeAreaView } from 'react-native';
 import { styles } from './Components/Style';
 import Header from './Components/Header';
 import Body from './Components/Body';
+import Footer from './Components/Footer';
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Header />
       <Body />
+      <Footer />
     </SafeAreaView>
   );
 }

@@ -14,6 +14,10 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    footer: {
+        flex: 1,
+    },
+
     content: {
         flex: 9,
         alignItems: 'center',

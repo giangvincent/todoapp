@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, Alert } from 'react-native';
 import { styles } from './Style';
 import TodoItem from './Item';
 import AddTodo from './AddTodo';
@@ -11,6 +11,11 @@ export default function () {
     { text: 'Learn React Native 3', key: '3' },
   ]);
 
+  /**
+   * Remove Todo
+   *
+   * @param {*} key
+   */
   const pressHandler = (key) => {
     setTodo((prevTodos) => {
       return prevTodos.filter((item) => {
@@ -19,11 +24,22 @@ export default function () {
     });
   }
 
+  /**
+   * Add Todo
+   *
+   * @param {*} text
+   */
   const submitHandler = (text) => {
-    setTodo((prevTodos) => [
-      { text: text, key: Math.random().toString() },
-      ...prevTodos
-    ]);
+    if (text.length > 3) {
+      setTodo((prevTodos) => [
+        { text: text, key: Math.random().toString() },
+        ...prevTodos
+      ]);
+    } else {
+      Alert.alert('OOPS!', 'Todo must be at least 3 characters long', [
+        { text: 'Understood', onPress: () => console.log('alert closed') }
+      ]);
+    }
   }
 
   return (
