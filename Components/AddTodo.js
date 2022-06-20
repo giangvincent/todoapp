@@ -11,7 +11,7 @@ export default function AddTodo({submitHandler}) {
     }
 
     return (
-        <View>
+        <View style={styles.inputContainer}>
             <TextInput
                 style={styles.input}
                 placeholder="Enter Todo"

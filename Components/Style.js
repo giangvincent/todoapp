@@ -36,10 +36,12 @@ export const styles = StyleSheet.create({
         borderStyle: 'dashed',
         borderRadius: 10,
     },
+    inputContainer: {
+        width: '100%',
+        padding: 16,
+    },
     input: {
         flexDirection:'row',
-        alignSelf: 'stretch',
-        width:'100%',
         height: 50,
         padding: 10,
         borderWidth: 1,
@@ -52,6 +54,6 @@ export const styles = StyleSheet.create({
         color: 'white',
         padding: 10,
         borderRadius: 10,
-        textAlign: 'center',
+        alignItems: 'center',
     }
 });
