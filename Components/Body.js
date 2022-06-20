@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList, Alert } from 'react-native';
+import { Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { styles } from './Style';
 import TodoItem from './Item';
 import AddTodo from './AddTodo';
+
 
 export default function () {
   const [todos, setTodo] = useState([
@@ -43,16 +44,20 @@ export default function () {
   }
 
   return (
-    <View style={styles.content}>
-      <AddTodo submitHandler={submitHandler} />
-      <View style={styles.list}>
-        <FlatList
-          data={todos}
-          renderItem={({ item }) => (
-            <TodoItem item={item} pressHandler={pressHandler} />
-          )}
-        />
+    <TouchableWithoutFeedback onPress={
+      Keyboard.dismiss()
+    }>
+      <View style={styles.content}>
+        <AddTodo submitHandler={submitHandler} />
+        <View style={styles.list}>
+          <FlatList
+            data={todos}
+            renderItem={({ item }) => (
+              <TodoItem item={item} pressHandler={pressHandler} />
+            )}
+          />
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
