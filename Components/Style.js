@@ -47,4 +47,11 @@ export const styles = StyleSheet.create({
         borderStyle: 'dashed',
         borderRadius: 10,
     },
+    button: {
+        backgroundColor: 'orange',
+        color: 'white',
+        padding: 10,
+        borderRadius: 10,
+        textAlign: 'center',
+    }
 });
