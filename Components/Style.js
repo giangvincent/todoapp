@@ -35,6 +35,10 @@ export const styles = StyleSheet.create({
         borderColor: 'orange',
         borderStyle: 'dashed',
         borderRadius: 10,
+        flexDirection: 'row',
+    },
+    itemText: {
+        marginLeft: 10,
     },
     inputContainer: {
         width: '100%',
